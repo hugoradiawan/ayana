@@ -1,6 +1,6 @@
+import 'package:ayana/uis/menu_icon.dart';
+import 'package:ayana/uis/trending.dart';
 import 'package:ayana/utils/extensions.dart';
-import 'package:ayana/menu_icon.dart';
-import 'package:ayana/trending.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -10,7 +10,10 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(_) => Scaffold(
-        appBar: AppBar(title: SvgPicture.asset('assets/logo.svg')),
+        appBar: AppBar(
+          title: SvgPicture.asset('assets/logo.svg'),
+          centerTitle: true,
+        ),
         body: ListView(
           children: [
             Container(

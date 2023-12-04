@@ -1,4 +1,4 @@
-import 'package:ayana/home_page.dart';
+import 'package:ayana/uis/home_page.dart';
 import 'package:ayana/configs/web_scroll_behavior.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

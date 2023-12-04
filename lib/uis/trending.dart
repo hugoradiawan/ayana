@@ -1,5 +1,5 @@
-import 'package:ayana/image_preview.dart';
-import 'package:ayana/trending_c.dart';
+import 'package:ayana/uis/image_preview.dart';
+import 'package:ayana/uilogics/trending_c.dart';
 import 'package:ayana/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -54,13 +54,6 @@ class Treading extends GetResponsiveView {
                 ],
               ),
               const SizedBox(height: 30),
-              Obx(
-                () => AnimatedContainer(
-                  height: tc.isTrendingSelected.value ? 600 : 0,
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.decelerate,
-                ),
-              ),
               Obx(
                 () => AnimatedOpacity(
                   opacity: tc.isTrendingSelected.value ? 0 : 1,
