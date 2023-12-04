@@ -12,6 +12,12 @@ class ColorPalette extends GetxController {
 
   ColorPalette(this.imageUrl);
 
+  @override
+  void onInit() {
+    updatePalette();
+    super.onInit();
+  }
+
   Future<void> updatePalette() async {
     imageProvider.value = NetworkImage(imageUrl, scale: 0.1);
     if (imageUrl.isNotEmpty) {
@@ -41,9 +47,4 @@ class ColorPalette extends GetxController {
       : (palette.value?.lightMutedColor != null
           ? palette.value!.lightMutedColor!.color
           : Colors.white);
-  @override
-  void onInit() {
-    updatePalette();
-    super.onInit();
-  }
 }

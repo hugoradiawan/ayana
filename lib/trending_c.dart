@@ -7,6 +7,7 @@ class TreadingC extends GetxController with GetSingleTickerProviderStateMixin {
   final RxInt activePage = 0.obs, selectedTrend = 0.obs;
   late RxDouble pageOffset = activePage.value.toDouble().obs;
   final RxBool isTrendingSelected = false.obs;
+  final Curve curve = Curves.decelerate;
   final List<(String, int, int)> trending = [
     ('bucket list', 0, 9),
     ('kids', 10, 19),
@@ -26,23 +27,22 @@ class TreadingC extends GetxController with GetSingleTickerProviderStateMixin {
 
   void updateViewPortFraction(double screenWidth) {
     pc = PageController(
-      viewportFraction:
-          lerpDouble(0.9, 0.2, (screenWidth.clamp(500, 1700) / 1700)) ?? 0.7,
+      viewportFraction: lerpDouble(
+              1.2, 0.2, curve.transform(screenWidth.clamp(500, 1700) / 1700)) ??
+          0.7,
       initialPage: activePage.value,
     );
     pc.addListener(() => pageOffset.value = pc.page ?? 0);
     update();
   }
 
-  void onTrendingSelected(int index) {
+  Future<void> onTrendingSelected(int index) async {
     isTrendingSelected.value = true;
     selectedTrend.value = index;
+    await Future.delayed(const Duration(milliseconds: 300));
     pc.animateTo(0,
-        duration: const Duration(milliseconds: 100), curve: Curves.decelerate);
-    Future.delayed(
-      const Duration(milliseconds: 200),
-      () => isTrendingSelected.value = false,
-    );
+        duration: const Duration(milliseconds: 400), curve: Curves.decelerate);
+    isTrendingSelected.value = false;
   }
 
   @override

@@ -1,5 +1,5 @@
-import 'package:ayana/color_palette.dart';
-import 'package:ayana/extensions.dart';
+import 'package:ayana/utils/color_palette.dart';
+import 'package:ayana/utils/extensions.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -39,7 +39,7 @@ class ImagePreview extends StatelessWidget {
             children: [
               CachedNetworkImage(
                 imageUrl: cp.imageUrl,
-                imageBuilder: (context, imageProvider) => Container(
+                imageBuilder: (_, imageProvider) => Container(
                   width: 700,
                   height: 500,
                   decoration: BoxDecoration(
