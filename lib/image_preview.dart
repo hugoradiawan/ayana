@@ -80,7 +80,7 @@ class ImagePreview extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Test Judul 123',
+                        'Thalassotherapy Pool',
                         style: TextStyle(
                           color: cp.lightVibrantColor.lighter(0.3),
                           fontSize: 27,
@@ -88,7 +88,7 @@ class ImagePreview extends StatelessWidget {
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        'Ini Text Deskripsi panjang banget 123 Hebat loh Bagus 123 Bandung Community',
+                        'Float, move or your way through our a series of hydrotherapy station.',
                         style: TextStyle(
                           color: cp.lightVibrantColor.lighter(0.3),
                           fontSize: 16,

@@ -9,10 +9,10 @@ class TreadingC extends GetxController with GetSingleTickerProviderStateMixin {
   final RxBool isTrendingSelected = false.obs;
   final Curve curve = Curves.decelerate;
   final List<(String, int, int)> trending = [
-    ('bucket list', 0, 9),
-    ('kids', 10, 19),
-    ('wellness', 20, 29),
-    ('romantic', 30, 39),
+    ('bucket list', 0, 19),
+    ('kids', 10, 39),
+    ('wellness', 40, 59),
+    ('romantic', 60, 79),
   ];
   late PageController pc = PageController(
     viewportFraction: 0.8,

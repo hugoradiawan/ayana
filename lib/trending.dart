@@ -42,9 +42,12 @@ class Treading extends GetResponsiveView {
                           ),
                         ),
                         if (i < tc.trending.length - 1)
-                          const Text(
+                          Text(
                             '/',
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Get.theme.colorScheme.primary,
+                            ),
                           )
                       ],
                     )
