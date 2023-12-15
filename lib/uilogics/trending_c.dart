@@ -10,7 +10,7 @@ class TreadingC extends GetxController with GetSingleTickerProviderStateMixin {
   final Curve curve = Curves.decelerate;
   final List<(String, int, int)> trending = [
     ('bucket list', 0, 19),
-    ('kids', 10, 39),
+    ('kids', 19, 39),
     ('wellness', 40, 59),
     ('romantic', 60, 79),
   ];
@@ -38,8 +38,8 @@ class TreadingC extends GetxController with GetSingleTickerProviderStateMixin {
 
   Future<void> onTrendingSelected(int index) async {
     isTrendingSelected.value = true;
-    selectedTrend.value = index;
     await Future.delayed(const Duration(milliseconds: 300));
+    selectedTrend.value = index;
     pc.animateTo(0,
         duration: const Duration(milliseconds: 400), curve: Curves.decelerate);
     isTrendingSelected.value = false;
